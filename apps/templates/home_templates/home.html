@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Home{% endblock %}
+
+{% block body%}
+<div class="center-block-main content">
+	<main>
+    	<article>
+        	<header>
+            	<img src="{% static 'images/img1.jpg' %}" alt="">
+                <p class="publish">Pablished by Andrey Bernackiy 29.09.2015</p>
+            </header>
+            <h2>Duis aute irure dolor in henderit in voluptate.</h2>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipop ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+			<p><a href="#" class="more">Continue Reading</a></p>
+        </article>
+        
+        <article>
+        	<header>
+            	<img src="{% static 'images/img2.jpg' %}" alt="">
+                <p class="publish">Pablished by Andrey Bernackiy 29.09.2015</p>
+            </header>
+            <h2>Duis aute irure dolor in henderit in voluptate.</h2>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipop ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+			<p><a href="#" class="more">Continue Reading</a></p>
+        </article>
+    </main>
+    <aside>
+    	<div class="widget">
+        	<h2>Search</h2>
+            <form action="" method="get">
+            	<input type="search" class="search" placeholder="What are you looking for?"> 
+            </form>
+        </div>
+        
+        <div class="widget">
+        	<h2>categories</h2>
+            <nav>
+            	<ul>
+                	<li><a href="#">Weekend</a></li>
+                    <li><a href="#">Nature</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Holiday</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="widget">
+        	<h2>Stay Tuned.</h2>
+            
+            <div class="subsrcibe">
+                <form action="" method="get">
+                    <input type="email" placeholder="Your Email" class="subsribe-input">
+                    <input type="image" src="{% static 'images/sbcr-btn.jpg' %}" class="subsribe-img">
+                </form>
+            </div>
+        </div>
+        
+        <div class="widget">
+        	<img src="{% static '' %}images/banner.jpg" alt="">
+        </div>
+    </aside>
+    
+    <div class="clr"></div>
+    
+    <div class="pager clearfix">
+    	<p class="previous-link">&larr; <a href="#">Previous</a></p>
+        <p class="next-link"><a href="#">Next</a> &rarr;</p>
+    </div>
+</div>
+
+<footer>
+	<div class="center-block-main">
+    	<a href="/"><img src="{% static 'images/logo-ftr.jpg' %}" alt=""></a>
+        <p>&copy; 2016 Blogin.com  -  All Rights Reserved  -  Find more free Templates at Pixelhint.com</p>
+    </div>
+</footer>
+{% endblock %}

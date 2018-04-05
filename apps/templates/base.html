@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<header>
+	<div class="center-block-main">
+    	<a href="/"><img src="{% static 'images/logo.jpg' %}" class="logo"></a>
+        <nav>
+        	<ul class="manu">
+            	<li><a href="#">Journal</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav> 
+    </div>
+</header>
+
+<body>
+	{% block body%}
+	{% endblock %}
+</body>
+</html>
