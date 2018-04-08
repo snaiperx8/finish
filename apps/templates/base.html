@@ -1,19 +1,25 @@
 {% load staticfiles %}
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html>
 <head>
+    <title>{% block title %}{% endblock %}</title>
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" >
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-    <title>{% block title %}{% endblock %}</title>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
 </head>
 <header>
 	<div class="center-block-main">
-    	<a href="/"><img src="{% static 'images/logo.jpg' %}" class="logo"></a>
+    	<a href="{% url 'home-url' %}"><img src="{% static 'images/logo.jpg' %}" class="logo"></a>
         <nav>
         	<ul class="manu">
-            	<li><a href="#">Journal</a></li>
+            	<li><a href="{% url 'create_entry_url' %}">Create</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Work</a></li>
                 <li><a href="#">Contact</a></li>
@@ -23,7 +29,15 @@
 </header>
 
 <body>
+    <div class="center-block-main content">
 	{% block body%}
 	{% endblock %}
+    </div>
 </body>
+<footer>
+    <div class="center-block-main">
+        <a href="/"><img src="{% static 'images/logo-ftr.jpg' %}" alt=""></a>
+        <p>&copy; 2016 Blogin.com  -  All Rights Reserved  -  Find more free Templates at Pixelhint.com</p>
+    </div>
+</footer>
 </html>

@@ -3,32 +3,20 @@
 {% block title %}Home{% endblock %}
 
 {% block body%}
-<div class="center-block-main content">
 	<main>
-    	<article>
-        	<header>
-            	<img src="{% static 'images/img1.jpg' %}" alt="">
-                <p class="publish">Pablished by Andrey Bernackiy 29.09.2015</p>
-            </header>
-            <h2>Duis aute irure dolor in henderit in voluptate.</h2>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipop ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-			<p><a href="#" class="more">Continue Reading</a></p>
-        </article>
-        
-        <article>
-        	<header>
-            	<img src="{% static 'images/img2.jpg' %}" alt="">
-                <p class="publish">Pablished by Andrey Bernackiy 29.09.2015</p>
-            </header>
-            <h2>Duis aute irure dolor in henderit in voluptate.</h2>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipop ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-			<p><a href="#" class="more">Continue Reading</a></p>
-        </article>
+        {% for posts_obj in posts_objs %}
+            <article>
+                <header>
+                    <img src='{{ posts_obj.image.url }}'>
+                    <p class="publish">Pablished by {{ posts_obj.autor }} {{posts_obj.date}}</p>
+                </header>
+                <h2>{{ posts_obj.title }}</h2>
+                <p>{{ posts_obj.text }}</p>
+                <p><a href="{% url 'read_url' posts_obj.id %}" class="more">Continue Reading</a></p>
+            </article>
+        {% endfor %}
     </main>
+
     <aside>
     	<div class="widget">
         	<h2>Search</h2>
@@ -71,12 +59,6 @@
     	<p class="previous-link">&larr; <a href="#">Previous</a></p>
         <p class="next-link"><a href="#">Next</a> &rarr;</p>
     </div>
-</div>
 
-<footer>
-	<div class="center-block-main">
-    	<a href="/"><img src="{% static 'images/logo-ftr.jpg' %}" alt=""></a>
-        <p>&copy; 2016 Blogin.com  -  All Rights Reserved  -  Find more free Templates at Pixelhint.com</p>
-    </div>
-</footer>
+
 {% endblock %}
