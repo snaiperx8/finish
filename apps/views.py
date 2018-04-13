@@ -9,11 +9,7 @@ from apps.forms import Sign_up_form, Create_entry_form
 
 @login_required(login_url = 'login/')
 def home(request):
-	posts_objs = CreatePost.objects.filter( autor = request.user).order_by("-id")
-	lol = posts_objs.text()
-	if lol >= 50:
-		kek = lol[:50]
-		
+	posts_objs = CreatePost.objects.filter( autor = request.user).order_by("-id")		
 	return render(request, 'home_templates/home.html', {'posts_objs': posts_objs})
 
 def sign_up(request):

@@ -12,7 +12,8 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    
+    {% block javascript %}{% endblock %}
+
 </head>
 <header>
 	<div class="center-block-main">
@@ -33,6 +34,7 @@
 	{% block body%}
 	{% endblock %}
     </div>
+    {% block secondblock %}{% endblock %}
 </body>
 <footer>
     <div class="center-block-main">

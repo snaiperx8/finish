@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name = 'home-url'),
     path('login/', auth_views.login, {'template_name': 'login_templates/login_template.html'}, name = 'login-url'),
-    path('logout/', auth_views.logout,{'next_page': '/'}, name = 'logout_url'),
+    path('logout/', auth_views.logout, {'next_page': '/'}, name = 'logout_url'),
     path('sign-up/', views.sign_up, name = 'sign_up_url'),
     path('create/', views.CreateEntry, name = 'create_entry_url'),
     path('edit/(?P<entry_id>\d+)/', views.EditEntry, name = 'entry_url'),
