@@ -8,10 +8,10 @@
             <article>
                 <header>
                     <img src='{{ posts_obj.image.url }}'>
-                    <p class="publish">Pablished by {{ posts_obj.autor }} {{posts_obj.date}}</p>
+                    <p class="publish">Pablished by {{ posts_obj.autor}} {{posts_obj.date}}</p>
                 </header>
                 <h2>{{ posts_obj.title }}</h2>
-                <p>{{ posts_obj.text }}</p>
+                <p>{{ posts_obj.text|safe }}</p>
                 <p><a href="{% url 'read_url' posts_obj.id %}" class="more">Continue Reading</a></p>
             </article>
         {% endfor %}

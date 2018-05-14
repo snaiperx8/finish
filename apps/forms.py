@@ -6,7 +6,7 @@ class Create_entry_form(forms.ModelForm):
 	class Meta:
 		model = CreatePost
 		exclude = ['autor', 'date']
-		
+		labels = {'title': ''}
 class Sign_up_form(forms.ModelForm):
 	username = forms.CharField(max_length = 100)
 	password = forms.CharField(widget = forms.PasswordInput())

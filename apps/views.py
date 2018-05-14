@@ -45,7 +45,7 @@ def EditEntry(request, entry_id):
 		if create_entry.is_valid():
 			create_entry.save()
 			return redirect(home)
-	return render(request, 'entry_templates/entry_template.html', {'create_entry': create_entry})
+	return render(request, 'edit_entry_templates/edit_entry_template.html', {'create_entry': create_entry})
 
 @login_required(login_url = 'login/')
 def read_entry(request, read_id):

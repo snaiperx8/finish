@@ -4,7 +4,7 @@
 
 {% block body %}
 	{{ entry.title }}
-	{{ entry.title }}
-	{{ entry.text }}
+	<img src="{{ entry.image.url }}">
+	{{ entry.text|safe}}
 	<a href="{% url 'entry_url' entry.id %}">Редактировать</a>
 {% endblock %}

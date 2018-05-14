@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load staticfiles %}
 {% load bootstrap4 %}
 
@@ -8,9 +8,10 @@
 {% endblock %}
 
 {% block body %}
-<form method = 'POST' enctype="multipart/form-data">
-	{% csrf_token %}
-	{{create_entry.as_p}}
-	<button type = 'submit'>Разместить</button>
-</form>
+		<form method = 'POST' enctype = multipart/form-data>
+			{% csrf_token %}
+			{{ create_entry.as_p }}
+			<input type="submit">
+		</form>	
 {% endblock %}
+
